@@ -1,0 +1,14 @@
+* boost目录空间不足
+** 查找linux内核
+uname -a
+  查看当前使用内核
+dpkg --get-selections | grep linux-image
+  查看当前已安装的内核
+sudo apt-get purge linux-image-4.4.0-91-generic
+  删除内核
+
+* 卸载软件
+sudo apt autoremove
+  自动卸载自动安装的并且不再需要的包
+  guile-2.0-libs libcuda1-367 libcuda1-375 libfreetype6:i386 libfuse2:i386 libgc1c2 libllvm3.8 libmircommon5 libpango1.0-0 libpangox-1.0-0 libpng12-0:i386 linux-headers-4.4.0-21 linux-headers-4.4.0-21-generic
+  linux-headers-4.4.0-47 linux-headers-4.4.0-47-generic linux-headers-4.4.0-91 linux-headers-4.4.0-91-generic nvidia-opencl-icd-367 nvidia-opencl-icd-375 snap-confine ubuntu-core-launcher
