@@ -8,5 +8,28 @@ sudo apt-get purge linux-image-4.4.0-91-generic
   删除内核
 
 * 卸载软件
+** 自动卸载自动安装的并且不再需要的包
 sudo apt autoremove
-  自动卸载自动安装的并且不再需要的包
+
+** 卸载配置文件和软件
+sudo apt-get --purge remove <programname>
+
+** 卸载软件
+sudo apt-get remove <programname>
+
+* Ubuntu 下如何查看已安装的软件
+1.查看安装的所有软件
+dpkg -l
+例如：dpkg -l | grep ftp
+
+2.查看软件安装的路径
+
+dpkg -L | grep ftp
+
+也可以用 whereis ftp
+
+3.查看软件版本
+
+aptitude show
+
+例如：aptitude  show ftp

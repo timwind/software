@@ -1,3 +1,4 @@
+* emacs
 ** hex模式
 ALT+X hexl-mode   进入16进制模式
 
@@ -20,3 +21,16 @@ CTRL+ALT+X 命令
 ALX+X hexl-mode-exit
 ** python模式
 *** anaconda报错
+* git
+git config --global credential.helper 'cache --timeout 3600'
+git clean -fd
+* tmux
+swap-window -s 3 -t 1
+C-b .
+swap-window -t 1
+move-window -t 1
+* daily
+** 2018.02.25
+*** mongodb 复制集启动及切换
+*** docker
+*** redis
