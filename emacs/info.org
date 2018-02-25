@@ -28,13 +28,43 @@ emacs 以server方式启动后，在shell中使用emacs打开文件时，会重�
 * git
 git config --global credential.helper 'cache --timeout 3600'
 git clean -fd
+* mongodb
+** 复制集
+cfg = rs.conf();
+cfg.members[1].priority = 2;
+rs.reconfig(cfg);
 * tmux
+** 命令
+C-b $
+%/"
+,
+c
+s
+w
+C-o
+q
+x
 swap-window -s 3 -t 1
 C-b .
 swap-window -t 1
 move-window -t 1
+
+** 复制
+一般终端或者putty都可以用鼠标选中复制到系统粘贴板,
+但超长文本很难处理，vi下用"+y可以复制到X粘贴板,
+但ubuntu和centos都没有X粘贴板（vi下:reg查看），目前发现方便的做法如下，
+将该行写入到新文件中，2种方式：
+(1) vi下V选中该行，：write abc写入到abc文件
+（2） sed -n '6p' filename > abc
+然后传输到windows下，或者用emacsclient打开
+* ubuntu
+** 快捷键
+多个分屏之间切换 C-M-left
 * daily
-** 2018.02.25
-*** mongodb 复制集启动及切换
+** undo
 *** docker
 *** redis
+
+** 2018.02.25
+- mongodb 复制集启动及切换
+- redis 入门
