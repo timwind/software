@@ -21,6 +21,10 @@ CTRL+ALT+X 命令
 ALX+X hexl-mode-exit
 ** python模式
 *** anaconda报错
+** ubuntu emacsclient
+emacs 以server方式启动后，在shell中使用emacs打开文件时，会重新启动一个emacs终端；
+解决办法是，在shell中使用emacsclient打开文件
+另，在shell中使用内置窗口打开文件，可以使用emacs -nw +filename
 * git
 git config --global credential.helper 'cache --timeout 3600'
 git clean -fd
