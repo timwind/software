@@ -25,6 +25,30 @@ ALX+X hexl-mode-exit
 emacs 以server方式启动后，在shell中使用emacs打开文件时，会重新启动一个emacs终端；
 解决办法是，在shell中使用emacsclient打开文件
 另，在shell中使用内置窗口打开文件，可以使用emacs -nw +filename
+** 访问远程文件
+安装putty，加入到emacs环境变量
+find-file或者helm， //plink:mxy@XXX:/home/mxy/test.cpp
+** 格式化xml
+sgml-pretty-print 会有多余的换行
+#+BEGIN_SRC emacs-lisp
+(defun bf-pretty-print-xml-region (begin end)
+  "Pretty format XML markup in region. You need to have nxml-mode
+http://www.emacswiki.org/cgi-bin/wiki/NxmlMode installed to do
+this.  The function inserts linebreaks to separate tags that have
+nothing but whitespace between them.  It then indents the markup
+by using nxml's indentation rules."
+  (interactive "r")
+  (save-excursion
+    (nxml-mode)
+    (goto-char begin)
+    (while (search-forward-regexp "\>[ \\t]*\<" nil t)
+      (backward-char) (insert "\n"))
+    (indent-region begin end))
+  (message "Ah, much better!"))
+#+END_SRC
+tidy没用过
+或者使用sublime安装这个插件:https://github.com/alek-sys/sublimetext_indentxml
+
 * git
 git config --global credential.helper 'cache --timeout 3600'
 git clean -fd
@@ -60,6 +84,9 @@ move-window -t 1
 * ubuntu
 ** 快捷键
 多个分屏之间切换 C-M-left
+* firefox乱码
+1、网站的样式在火狐浏览器下兼容出现问题，这个除了通知网站进行适配，别的没有很好打办法；
+2、浏览器的样式被关闭。开启路径：菜单栏->查看->页面样式->基本页面样式。即可开启当前页面的样式效果。
 * daily
 ** undo
 *** docker
