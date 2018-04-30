@@ -33,3 +33,35 @@ dpkg -L | grep ftp
 aptitude show
 
 例如：aptitude  show ftp
+
+* 18.04安装
+** 软件
+*** 18.04 U盘最小化安装
+安装后执行
+sudo apt-get update
+
+*** 命令安装
+sudo apt-get install git
+sudo apt-get install emacs
+sudo apt-get install tmux
+sudo apt-get install fcitx （搜狗基础)
+
+*** software安装
+Rhythmbox
+chromium
+libreoffice
+
+*** 未安装
+换键
+搜狗   https://pinyin.sogou.com/linux/
+
+*** 设置
+**** 换键
+多个分屏之间切换 C-M-left
+sudo权限下编辑/etc/default/keyboard文件，找到XKBOPTIONSkey增加键盘配置选项（多组配置之间可以用逗号分割）。
+XKBOPTIONS="ctrl:swapcaps"
+sudo dpkg-reconfigure keyboard-configuration
+这样便可以在当前系统所有环境下生效。
+这样换的是左ctrl，与期望不一致
+
+

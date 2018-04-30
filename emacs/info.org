@@ -82,19 +82,6 @@ move-window -t 1
 (1) vi下V选中该行，：write abc写入到abc文件
 （2） sed -n '6p' filename > abc
 然后传输到windows下，或者用emacsclient打开
-* ubuntu
-** 快捷键
-多个分屏之间切换 C-M-left
-** 交换大写键
-sudo权限下编辑/etc/default/keyboard文件，找到XKBOPTIONSkey增加键盘配置选项（多组配置之间可以用逗号分割）。
-XKBOPTIONS="ctrl:swapcaps"
-sudo dpkg-reconfigure keyboard-configuration
-这样便可以在当前系统所有环境下生效。
-这样换的是左ctrl，与期望不一致
-* firefox乱码
-1、网站的样式在火狐浏览器下兼容出现问题，这个除了通知网站进行适配，别的没有很好打办法；
-2、浏览器的样式被关闭。开启路径：菜单栏->查看->页面样式->基本页面样式。即可开启当前页面的样式效果。
-=======
 * python
 ** exception
 如何打印异常信息
@@ -112,7 +99,7 @@ sudo dpkg-reconfigure keyboard-configuration
 ulimit -a 查看所有限制
 ulimit -n 查看文件描述符最大限制(可能只适用于centos)
 cat /proc/$PID/limits | grep 'Max open files' 查看当前进程文件描述符最大限制
-
+lsof -p $PID 查看当前进程使用的文件资源 
 * grpc
 
 ** step
@@ -150,7 +137,6 @@ sudo chmod -R +rx google/
 *** redis
 *** ES
 *** gRPC
-
 
 ** 2018.02.25
 - mongodb 复制集启动及切换
