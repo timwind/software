@@ -85,7 +85,12 @@ move-window -t 1
 * ubuntu
 ** 快捷键
 多个分屏之间切换 C-M-left
-
+** 交换大写键
+sudo权限下编辑/etc/default/keyboard文件，找到XKBOPTIONSkey增加键盘配置选项（多组配置之间可以用逗号分割）。
+XKBOPTIONS="ctrl:swapcaps"
+sudo dpkg-reconfigure keyboard-configuration
+这样便可以在当前系统所有环境下生效。
+这样换的是左ctrl，与期望不一致
 * firefox乱码
 1、网站的样式在火狐浏览器下兼容出现问题，这个除了通知网站进行适配，别的没有很好打办法；
 2、浏览器的样式被关闭。开启路径：菜单栏->查看->页面样式->基本页面样式。即可开启当前页面的样式效果。
