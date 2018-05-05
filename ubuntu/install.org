@@ -55,11 +55,15 @@ libreoffice
 搜狗   https://pinyin.sogou.com/linux/ （重启后就生效了）
 
 *** 设置
-换键
-
+**** 换键
 sudo权限下编辑/etc/default/keyboard文件，找到XKBOPTIONSkey增加键盘配置选项（多组配置之间可以用逗号分割）。
 XKBOPTIONS="ctrl:swapcaps"
 #sudo dpkg-reconfigure keyboard-configuration
 这样换的是左ctrl，与期望不一致，重启就生效了
 
-
+**** 设置git保存密码
+修改~/.gitconfig, 新增[credential] helper = store
+** 用root修改密码
+进入高级选项，recoverymode，e
+删除recovery nomodeset，并在本行末尾加上quiet splash rw init=/bin/bash，按F10；
+在命令行输入passwd +用户名，修改密码
