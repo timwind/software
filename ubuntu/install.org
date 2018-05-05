@@ -45,6 +45,9 @@ sudo apt-get install git
 sudo apt-get install emacs
 sudo apt-get install tmux
 sudo apt-get install fcitx （搜狗基础)
+sudo apt-get install python2.7 （自带python3）
+sudo apt install ubuntu-make
+umake ide eclipse-jee
 
 *** software安装
 Rhythmbox
