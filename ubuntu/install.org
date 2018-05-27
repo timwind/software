@@ -45,9 +45,14 @@ sudo apt-get install git
 sudo apt-get install emacs
 sudo apt-get install tmux
 sudo apt-get install fcitx （搜狗基础)
-sudo apt-get install python2.7 （自带python3）
 sudo apt install ubuntu-make
 umake ide eclipse-jee
+
+**** python
+sudo apt-get install python2.7 （自带python3）
+sudo apt-get install python-pip python-dev build-essential
+或者sudo apt-get install python-pip  sudo apt-get install python3-pip
+sudo pip install mock-server==0.3.7
 
 *** software安装
 Rhythmbox
