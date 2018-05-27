@@ -96,10 +96,18 @@ move-window -t 1
 #+END_SRC
 * linux
 ** ulimit
+*** 命令
 ulimit -a 查看所有限制
 ulimit -n 查看文件描述符最大限制(可能只适用于centos)
 cat /proc/$PID/limits | grep 'Max open files' 查看当前进程文件描述符最大限制
-lsof -p $PID 查看当前进程使用的文件资源 
+lsof -p $PID 查看当前进程使用的文件资源
+*** 修改ulimit
+修改/etc/security/limits.conf
+修改最大打开文件数示例:
+username soft nofile 8192
+username hard nofile 8192
+修改进程数：
+username soft noproc 8192
 * grpc
 
 ** step
@@ -141,3 +149,9 @@ sudo chmod -R +rx google/
 ** 2018.02.25
 - mongodb 复制集启动及切换
 - redis 入门
+
+
+* mock
+** java
+mockito 可以测试java中的类，用于单元测试 
+
